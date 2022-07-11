@@ -1,0 +1,37 @@
+{
+  "template": "https://github.com/lkubb/salt-template-formula",
+  "commit": "adf70d64265f0d30f2b37b452146a4a877508569",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "_extensions": [
+        "local_extensions.YAMLDumper"
+      ],
+      "_jinja2_env_vars": {
+        "block_start_string": "{!",
+        "block_end_string": "!}",
+        "variable_start_string": "{=",
+        "variable_end_string": "=}",
+        "comment_start_string": "{@",
+        "comment_end_string": "@}"
+      },
+      "name": "Webhook",
+      "abbr": "webhook",
+      "abbr_pysafe": "webhook",
+      "pkg": "webhook",
+      "needs_repo": "n",
+      "config": "/etc/webhook.conf",
+      "service": "webhook",
+      "subcomponent": "",
+      "subcomponent_config": "",
+      "git_username": "lkubb",
+      "_lookup": {},
+      "_settings": {
+        "hooks": [],
+        "service_hardened": true
+      },
+      "_template": "https://github.com/lkubb/salt-template-formula"
+    }
+  },
+  "directory": null
+}

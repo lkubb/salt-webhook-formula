@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+#
+# Set default values.
+---
+values:
+  lookup:
+    rootgroup: root
+    pkg:
+      name: webhook
+    config: '/etc/webhook.conf'
+    service:
+      name: webhook
+  hooks: []
+  service_hardened: true
+  # Just here for testing
+  added_in_defaults: defaults_value
+  winner: defaults
+...
