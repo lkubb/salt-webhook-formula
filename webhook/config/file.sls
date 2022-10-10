@@ -12,7 +12,7 @@ include:
 webhook-config-file-file-managed:
   file.serialize:
     - name: {{ webhook.lookup.config }}
-    - mode: 644
+    - mode: '0600'
     - user: root
     - group: {{ webhook.lookup.rootgroup }}
     - makedirs: True
