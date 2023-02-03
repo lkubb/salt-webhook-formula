@@ -8,8 +8,8 @@ values:
   lookup:
     arch: amd64
     rootgroup: root
-    enablerepo:
-      stable: true
+    pkg:
+      name: webhook
     config: '/etc/webhook.conf'
     service:
       name: webhook

@@ -7,8 +7,8 @@ webhook:
     # Just for testing purposes
     winner: lookup
     added_in_lookup: lookup_value
-    enablerepo:
-      stable: true
+    pkg:
+      name: webhook
     config: '/etc/webhook.conf'
     service:
       name: webhook
