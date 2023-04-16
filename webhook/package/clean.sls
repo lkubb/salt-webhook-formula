@@ -1,5 +1,9 @@
-# -*- coding: utf-8 -*-
 # vim: ft=sls
+
+{#-
+    Removes the webhook package and hardened service unit, if installed.
+    Has a depency on `webhook.config.clean`_.
+#}
 
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- set sls_config_clean = tplroot ~ '.config.clean' %}
@@ -15,7 +19,7 @@ Webhook hardened service unit is removed:
     - name: /etc/systemd/system/{{ webhook.lookup.service.name }}.service.d/harden.conf
 {%- endif %}
 
-webhook-package-clean-pkg-removed:
+Webhook is removed:
   pkg.removed:
     - name: {{ webhook.lookup.pkg.name }}
     - require:

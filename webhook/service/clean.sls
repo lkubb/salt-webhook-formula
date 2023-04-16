@@ -1,10 +1,13 @@
-# -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{%- set tplroot = tpldir.split('/')[0] %}
+{#-
+    Stops the webhook service and disables it at boot time.
+#}
+
+{%- set tplroot = tpldir.split("/")[0] %}
 {%- from tplroot ~ "/map.jinja" import mapdata as webhook with context %}
 
-webhook-service-clean-service-dead:
+Webhook is dead:
   service.dead:
     - name: {{ webhook.lookup.service.name }}
-    - enable: False
+    - enable: false

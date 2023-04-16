@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/lkubb/salt-template-formula",
-  "commit": "09d23d7be4069023a5dd2201c3db5b82049391a1",
+  "commit": "480ee76119cf46d599a1ef29b9e0472958c827c6",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -25,8 +25,8 @@
       "subcomponent": "",
       "subcomponent_config": "",
       "git_username": "lkubb",
-      "_lookup": {},
-      "_settings": {
+      "lookup": {},
+      "settings": {
         "hooks": [],
         "service_hardened": true
       },
