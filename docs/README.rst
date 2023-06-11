@@ -98,7 +98,7 @@ uninstalls the package.
 ``webhook.package.clean``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Removes the webhook package and hardened service unit, if installed.
-Has a depency on `webhook.config.clean`_.
+Has a dependency on `webhook.config.clean`_.
 
 
 ``webhook.config.clean``
