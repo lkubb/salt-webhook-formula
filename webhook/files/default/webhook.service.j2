@@ -1,11 +1,14 @@
-# This file is managed by Salt.
+[Unit]
+Description=Small server for creating HTTP endpoints (hooks)
+Documentation=https://github.com/adnanh/webhook/
+ConditionPathExists=/etc/webhook.conf
 
 [Service]
-ExecStart=
-ExecStart=/usr/bin/webhook \
+ExecStart={{ webhook.lookup.paths.bin }} \
             -nopanic \
-            -hooks /etc/webhook.conf \
+            -hooks /etc/webhook.conf {%- if webhook.service_hardened %} \
             -ip 127.0.0.1
+
 
 # Process management
 ####################
@@ -100,3 +103,8 @@ SystemCallFilter=~add_key clone3 kcmp keyctl mbind move_pages name_to_handle_at 
 
 # Only permit native system calls.
 SystemCallArchitectures=native
+
+{%- endif %}
+
+[Install]
+WantedBy=multi-user.target

@@ -14,7 +14,6 @@ Webhook configuration is managed:
     - user: root
     - group: {{ webhook.lookup.rootgroup }}
     - makedirs: true
-    - template: jinja
     - require:
       - sls: {{ sls_package_install }}
     - dataset: {{ webhook.hooks | json }}

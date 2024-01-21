@@ -25,9 +25,30 @@
       "subcomponent": "",
       "subcomponent_config": "",
       "git_username": "lkubb",
-      "lookup": {},
+      "lookup": {
+        "build_user": {
+          "name": "webhookbuild",
+          "home": "/home/webhookbuild"
+        },
+        "paths": {
+          "bin": "/opt/webhook/webhook",
+          "bin_pkg": "/usr/bin/webhook",
+          "build": "/opt/webhook/src"
+        },
+        "pkg": {
+          "golang": "golang",
+          "name": "webhook"
+        },
+        "repo": "https://github.com/adnanh/webhook",
+        "service": {
+          "name": "webhook",
+          "unit": "/etc/systemd/system/{name}.service"
+        }
+      },
       "settings": {
         "hooks": [],
+        "install_method": "build",
+        "rev": null,
         "service_hardened": true
       },
       "_template": "https://github.com/lkubb/salt-template-formula"

@@ -4,7 +4,25 @@
 webhook:
 
   hooks: []
+  install_method: build
+  rev: null
   service_hardened: true
+
+  lookup:
+    build_user:
+      home: /home/webhookbuild
+      name: webhookbuild
+    paths:
+      bin: /opt/webhook/webhook
+      bin_pkg: /usr/bin/webhook
+      build: /opt/webhook/src
+    pkg:
+      golang: golang
+      name: webhook
+    repo: https://github.com/adnanh/webhook
+    service:
+      name: webhook
+      unit: /etc/systemd/system/{name}.service
 
   tofs:
       # The files_switch key serves as a selector for alternative

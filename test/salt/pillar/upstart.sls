@@ -6,12 +6,24 @@ webhook:
     # Just for testing purposes
     winner: lookup
     added_in_lookup: lookup_value
-    pkg:
-      name: webhook
     config: '/etc/webhook.conf'
+    build_user:
+      home: /home/webhookbuild
+      name: webhookbuild
+    paths:
+      bin: /opt/webhook/webhook
+      bin_pkg: /usr/bin/webhook
+      build: /opt/webhook/src
+    pkg:
+      golang: golang
+      name: webhook
+    repo: https://github.com/adnanh/webhook
     service:
       name: webhook
+      unit: /etc/systemd/system/{name}.service
   hooks: []
+  install_method: build
+  rev: null
   service_hardened: true
 
   tofs:
