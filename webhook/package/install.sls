@@ -68,8 +68,10 @@ Webhook is installed:
     - runas: {{ webhook.lookup.build_user.name }}
     - require:
       - file: {{ salt["file.dirname"](webhook.lookup.paths.bin) }}
+{%-   if salt["file.file_exists"](webhook.lookup.paths.bin) %}
     - onchanges:
       - git: {{ webhook.lookup.repo }}
+{%-   endif %}
 
 Webhook service unit is installed:
   file.managed:
