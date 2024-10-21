@@ -70,7 +70,13 @@ Webhook is installed:
       - file: {{ salt["file.dirname"](webhook.lookup.paths.bin) }}
 {%-   if salt["file.file_exists"](webhook.lookup.paths.bin) %}
     - onchanges:
+{%-   endif %}
       - git: {{ webhook.lookup.repo }}
+{%-   if grains | traverse("selinux:enabled") %}
+  selinux.fcontext_policy_applied:
+    - name: {{ webhook.lookup.paths.bin }}
+    - require:
+      - cmd: go build -o '{{ webhook.lookup.paths.bin }}'
 {%-   endif %}
 
 Webhook service unit is installed:
